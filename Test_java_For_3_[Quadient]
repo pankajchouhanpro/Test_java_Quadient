@@ -1,0 +1,70 @@
+package newTest;
+
+
+import java.util.Date;
+import java.util.List;
+//Creating a Class
+public class EmployeeDaoImpl implements EmployeeDAO {
+	Employee[]emps=new Employee[100];
+	static int index;
+
+	
+	//Upadting a Data
+	@Override
+	public int update(int id, String name, float salary, String city, String phone, Date date) {
+		for(int i=0;i<index;i++) {
+			if(emps[i].getId()==id) {
+				emps[i].setName(name);
+				emps[i].setSalary(salary);
+                emps[i].setCity(city);
+                emps[i].setPhone(phone);
+                emps[i].setDoj(date);
+                break;
+            }
+			}
+		return 0;
+	}
+
+	//Adding a Data 
+	@Override
+	public int insert(Employee s) {
+		emps[index]=s;
+		index++;
+		return 0;
+	}
+	
+	//Deleting a Data
+	
+	
+	@Override
+	public int Delete(int id) {
+		// TODO Auto-generated method stub
+		for (int i=0;i<index;i++) {
+			if(emps[i].getId()==id) {
+				 emps[i].setName(null);
+				 emps[i].setSalary(-1);
+				 emps[i].setCity(null);
+				 emps[i].setPhone(null);
+				 emps[i].setDoj(null);
+	             emps[i].setId(-1);
+			}
+			else
+		        System.out.println("Employee  id not found");
+		
+		}
+		return 0;
+	}
+
+	//Fetching a  Data
+	
+	@Override
+	public List fetch() {
+		// TODO Auto-generated method stub
+		for (int i=0;i<index;i++) {
+			System.out.println(emps[i]);
+		}
+		
+		return null;
+	}
+
+}
