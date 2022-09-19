@@ -1,0 +1,70 @@
+package newTest;
+import java.util.Date;
+//Create a Class Employee
+public class Employee {
+	private int id;
+	private String name;
+	private float salary;
+	private String city;
+	private String phone;
+	private Date doj;
+	
+	
+	//Createing a Default Construtor
+	Employee() {}  
+	//Creating a Parametrized constructor
+	
+	Employee(int id, String name, float salary, String city, String phone, Date doj) { 
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+		this.city = city;
+		this.phone = phone;
+		this.doj = doj;
+	}
+	
+	//Creating a Getter Setter
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getSalary() {
+		return salary;
+	}
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public Date getDoj() {
+		return doj;
+	}
+	public void setDoj(Date doj) {
+		this.doj = doj;
+	}
+	
+	//Create ToString Method
+	@Override
+	public String toString() {
+		return String.format("%-5s\t%-15s\t%-10s\t%-10s\t%-15s\t%-10s",id,name,salary,city,phone,doj);
+	}
+
+}
