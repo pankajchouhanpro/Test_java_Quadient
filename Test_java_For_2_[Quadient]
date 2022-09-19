@@ -1,0 +1,16 @@
+package newTest;
+
+import java.util.Date;
+import java.util.List;
+
+
+
+//Creating a Interface
+public interface EmployeeDAO {
+	int update(int id,String name,float salary,String city,String phone,Date date);
+	int insert(Employee s);
+	int Delete(int id);
+	List fetch();
+
+
+}
